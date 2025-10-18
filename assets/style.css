@@ -1,14 +1,46 @@
 :root{
-  --bg:#0f1216; --card:#151a21; --muted:#a7b0bd; --text:#e7ecf3; --accent:#6aa5ff; --border:#2a3240;
+  --bg:#0f1216; --panel:#131923; --muted:#a7b0bd; --text:#e7ecf3;
+  --accent:#6aa5ff; --accent-700:#3c7de6; --border:#253041;
 }
-*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);
-  font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
-.container{max-width:1100px;margin:0 auto;padding:24px}
-header{display:flex;align-items:center;justify-content:space-between;padding:12px 0 8px;border-bottom:1px solid var(--border)}
-.brand{font-weight:700;letter-spacing:.3px}
-nav a{color:var(--muted);text-decoration:none;margin-left:18px}
-nav a[aria-current="page"], nav a:hover{color:var(--text)}
-main{margin:28px 0}
-.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px}
-footer{margin-top:36px;padding:18px 0;color:var(--muted);border-top:1px solid var(--border);font-size:.9rem}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+}
+a{color:var(--accent); text-decoration:none}
+.container{max-width:1100px; margin:0 auto; padding:20px}
 
+/* Header / Nav */
+header{
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  padding:12px 0; border-bottom:1px solid var(--border);
+}
+.brand{font-weight:800; letter-spacing:.2px}
+nav{display:flex; gap:18px; flex-wrap:wrap}
+nav a{color:var(--muted)}
+nav a:hover, nav a[aria-current="page"]{color:var(--text)}
+
+/* Layout helpers */
+main{margin:28px 0}
+.card{background:var(--panel); border:1px solid var(--border); border-radius:16px; padding:18px}
+.grid{display:grid; gap:16px}
+.grid.cols-3{grid-template-columns:repeat(3,1fr)}
+@media (max-width:980px){
+  .grid.cols-3{grid-template-columns:1fr}
+}
+
+/* Hero */
+.hero{
+  display:grid; grid-template-columns:1.3fr .7fr; gap:28px; align-items:center; padding:28px 0;
+}
+.hero .lead{color:var(--muted); max-width:55ch}
+.hero .actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:14px}
+.btn{
+  display:inline-block; padding:11px 14px; border-radius:12px; border:1px solid var(--border);
+  background:#0c121a; color:var(--text); font-weight:600;
+}
+.btn.primary{background:var(--accent); color:#08121f; border-color:transparent}
+.btn.primary:hover{background:var(--accent-700)}
+
+.muted{color:var(--muted)}
+footer{margin-top:32px; padding:18px 0; border-top:1px solid var(--border); color:var(--muted)}
