@@ -3,16 +3,98 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>About • Your Name</title>
-  <link rel="stylesheet" href="assets/styles.css" />
+  <title>About • Malachi Seavcko</title>
+
+ 
+  <style>
+    :root{
+      --bg:#0f1216; --panel:#131923; --panel-2:#0f141a;
+      --text:#e7ecf3; --muted:#a7b0bd; --border:#253041;
+      --accent:#6aa5ff; --accent-700:#3c7de6;
+      --brand:#f5b301; --brand-700:#d79a00; /* golden accent */
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);
+      font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:var(--accent);text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+
+  
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;
+      padding:12px 0;border-bottom:1px solid var(--border)}
+    .brand{font-weight:800;letter-spacing:.2px}
+    nav{display:flex;gap:18px;flex-wrap:wrap}
+    nav a{color:var(--muted)}
+    nav a:hover, nav a[aria-current="page"]{color:var(--text)}
+
+    main{margin:26px 0}
+
+   
+    .about-wrap{
+      display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:stretch;
+      min-height:460px;
+    }
+    .about-left{
+      background:linear-gradient(180deg,var(--panel),var(--panel-2));
+      border:1px solid var(--border);border-radius:18px;padding:26px 24px;
+      box-shadow:0 10px 30px rgba(0,0,0,.25)
+    }
+    .kicker{color:var(--brand);font-weight:700;letter-spacing:.05em;margin:0 0 6px}
+    .about-title{
+      margin:0 0 14px;font-size:3rem;line-height:1.05;letter-spacing:.01em;font-weight:900
+    }
+    .underline{
+      width:120px;height:3px;background:var(--brand);border-radius:3px;margin:2px 0 18px
+    }
+    .lead{color:#f2f5fb;font-weight:800;margin:0 0 10px}
+    .body{color:var(--muted);max-width:64ch}
+    .list{
+      margin:16px 0 0;padding:0;list-style:none;color:var(--muted);
+      display:grid;gap:8px
+    }
+    .list li::before{content:"• ";color:var(--brand);margin-right:4px}
+
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    .btn{display:inline-block;padding:11px 14px;border-radius:12px;border:1px solid var(--border);
+      background:#0c121a;color:var(--text);font-weight:600}
+    .btn.primary{background:var(--brand);color:#0b0900;border-color:transparent}
+    .btn.primary:hover{background:var(--brand-700)}
+
+    .about-right{
+      position:relative;border-radius:18px;overflow:hidden;background:var(--panel);
+      border:1px solid var(--border);box-shadow:0 10px 30px rgba(0,0,0,.25)
+    }
+    .about-right img{display:block;width:100%;height:100%;object-fit:cover}
+    
+    .about-right::before,.about-right::after{
+      content:"";position:absolute;width:0;height:0;border-style:solid;opacity:.95
+    }
+    .about-right::before{top:-2px;left:-2px;border-width:26px 0 0 52px;border-color:transparent transparent transparent var(--brand)}
+    .about-right::after{right:-2px;bottom:-2px;border-width:0 0 36px 72px;border-color:transparent transparent var(--brand) transparent}
+
+    
+    .info-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+    .card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:16px}
+    .card h3{margin:.2rem 0 .3rem}
+    .muted{color:var(--muted)}
+
+   
+    @media (max-width:980px){
+      .about-wrap{grid-template-columns:1fr}
+      .info-cards{grid-template-columns:1fr}
+      .about-title{font-size:2.4rem}
+    }
+
+    footer{margin-top:28px;padding:18px 0;border-top:1px solid var(--border);color:var(--muted)}
+  </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <div class="brand">Your Name</div>
+      <div class="brand">Malachi Sevacko</div>
       <nav aria-label="Primary">
         <a href="index.html">Home</a>
-        <a href="about.html">About Me</a>
+        <a href="about.html" aria-current="page">About Me</a>
         <a href="resume.html">Resume</a>
         <a href="projects.html">Projects</a>
         <a href="contact.html">Contact</a>
@@ -22,15 +104,66 @@
     </header>
 
     <main>
-      <section class="card">
-        <h1>About Me</h1>
-        <p>Coming soon.</p>
+      <section class="about-wrap">
+        <!-- LEFT: text -->
+        <div class="about-left">
+          <p class="kicker">— About</p>
+
+          <p class="lead">I’m passionate about innovation and driven by impact.</p>
+          <p class="body">
+            I’m a former U.S. Navy Electronics Technician (Nuclear) who has transitioned from maintaining complex reactor control systems to building software that solves real-world problems. I’m currently pursuing a major in Computer Science and a minor in Japanese, combining my love for logic, language, and precision.
+          </p>
+          <p class="body">
+            Outside of classes, I spend my time gaming, fishing, and tinkering with electronics projects — the same curiosity that kept me troubleshooting in the Navy now drives me to understand systems from the inside out. When I’m not working on code or a circuit board, I’m usually out by the water or relaxing at home with my dog, who’s a loyal study buddy during late-night coding sessions.
+          </p>
+
+          <ul class="list">
+            <li>Toolbox: C++, python, HTML/CSS/JS, p5.js, Git/GitHub</li>
+            <li>Values: Honesty, Truthseeking, and Continuous Learning</li>
+          </ul>
+
+          <div class="cta">
+            <a class="btn primary" href="projects.html">See Projects</a>
+            <a class="btn" href="resume.html">View Resume</a>
+          </div>
+        </div>
+
+        <!-- RIGHT: photo -->
+        <div class="about-right">
+          
+          <img src="assets/1000002341.jpg" />
+        </div>
+      </section>
+
+      <!-- quick info strip -->
+      <section class="info-cards">
+        <article class="card">
+          <h3>What I’m studying</h3>
+          <p class="muted">HIC, Networking, Software Engineering.</p>
+        </article>
+        <article class="card">
+          <h3>Recent work</h3>
+          <p class="muted">Side-scroller game development, website design.</p>
+        </article>
+        <article class="card">
+          <h3>Contact</h3>
+          <p class="muted">msevack1@kent.edu • <a href="https://github.com/malachisevacko">GitHub</a></p>
+        </article>
       </section>
     </main>
 
-    <footer>© 2025 Your Name</footer>
+    <footer>© 2025 Malachi Sevacko • Built with GitHub Pages</footer>
   </div>
-  <script src="assets/main.js"></script>
+
+  <script>
+    // auto-highlight current nav link
+    (function () {
+      const here = location.pathname.split('/').pop() || 'about.html';
+      document.querySelectorAll('nav a').forEach(a => {
+        const target = a.getAttribute('href');
+        if (here === target) a.setAttribute('aria-current','page');
+      });
+    })();
+  </script>
 </body>
 </html>
-
