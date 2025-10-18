@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Home • Your Name</title>
+  <title>Your Name • Portfolio</title>
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
@@ -22,15 +22,72 @@
     </header>
 
     <main>
-      <section class="card">
-        <h1>Welcome!</h1>
-        <p>This is my portfolio home. I’ll add content soon—use the navbar to visit pages.</p>
+      <!-- Hero -->
+      <section class="hero">
+        <div>
+          <h1 style="margin:0 0 6px">Hi, I’m Your Name 👋</h1>
+          <p class="lead">
+            Computer Science student focused on UI/UX, web apps, and playful side projects.
+            This site collects my resume, projects, and notes.
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="projects.html">View Projects</a>
+            <a class="btn" href="resume.html">See Resume</a>
+          </div>
+        </div>
+        <div class="card">
+          <h2 style="margin-top:0">Quick Info</h2>
+          <ul class="muted" style="margin:8px 0 0; padding-left:18px">
+            <li>Based in Ohio • EST</li>
+            <li>Interests: HCI, p5.js, networking, Japanese</li>
+            <li>Email: you@example.com</li>
+            <li>GitHub: github.com/your-handle</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Featured Projects (placeholders) -->
+      <section style="margin-top:8px">
+        <h2>Featured Projects</h2>
+        <p class="muted" style="margin-top:4px">More on the <a href="projects.html">Projects</a> page.</p>
+        <div class="grid cols-3" style="margin-top:12px">
+          <article class="card">
+            <h3 style="margin-top:0">Red Ball (p5.js)</h3>
+            <p class="muted">Side-scroller with layered clouds and physics.</p>
+            <a href="projects.html">Details →</a>
+          </article>
+          <article class="card">
+            <h3 style="margin-top:0">HTA Toolkit</h3>
+            <p class="muted">Class notes + examples for Human Interface Computing.</p>
+            <a href="projects.html">Details →</a>
+          </article>
+          <article class="card">
+            <h3 style="margin-top:0">Network Notes</h3>
+            <p class="muted">Concise summaries of common exam topics.</p>
+            <a href="projects.html">Details →</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- Latest Posts (placeholders) -->
+      <section style="margin-top:20px">
+        <h2>Latest Posts</h2>
+        <div class="grid">
+          <article class="card">
+            <h3 style="margin-top:0"><a href="blog.html">Usability heuristics vs. Shneiderman’s rules</a></h3>
+            <p class="muted">Where they overlap and how I use both on homework.</p>
+          </article>
+          <article class="card">
+            <h3 style="margin-top:0"><a href="blog.html">Design critique: Discord’s channel hierarchy</a></h3>
+            <p class="muted">Navigation, discoverability, and notification load.</p>
+          </article>
+        </div>
       </section>
     </main>
 
-    <footer>© 2025 Your Name</footer>
+    <footer>© 2025 Your Name • Built with GitHub Pages</footer>
   </div>
+
   <script src="assets/main.js"></script>
 </body>
 </html>
-
