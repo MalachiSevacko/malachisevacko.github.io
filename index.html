@@ -3,9 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Your Name • Portfolio</title>
+  <title>Malachi Sevacko • Portfolio</title>
 
-  <!-- Inline CSS (self-contained) -->
   <style>
     :root{
       --bg:#0f1216; --panel:#131923; --panel-2:#0f141a;
@@ -21,7 +20,7 @@
     a{color:var(--accent); text-decoration:none}
     .container{max-width:1100px; margin:0 auto; padding:20px}
 
-    /* Header / Nav */
+    
     header{
       display:flex; align-items:center; justify-content:space-between; gap:16px;
       padding:12px 0; border-bottom:1px solid var(--border);
@@ -34,7 +33,7 @@
 
     main{margin:26px 0}
 
-    /* Cards, grids */
+   
     .card{
       background:var(--panel);
       border:1px solid var(--border);
@@ -43,6 +42,141 @@
     }
     .grid{display:grid; gap:16px}
     .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+
+    /* Buttons */
+    .btn{
+      display:inline-block; padding:11px 14px; border-radius:12px;
+      border:1px solid var(--border); background:#0c121a; color:var(--text);
+      font-weight:600;
+    }
+    .btn.primary{background:var(--brand); color:#0b0900; border-color:transparent}
+    .btn.primary:hover{background:var(--brand-700)}
+
+    .muted{color:var(--muted)}
+
+    
+    .hero-split{
+      position:relative;
+      display:grid; grid-template-columns:.9fr 1.1fr; gap:28px;
+      align-items:stretch; min-height:420px; margin-bottom:12px;
+    }
+    .photo-panel{
+      position:relative; border-radius:18px; overflow:hidden;
+      background:var(--panel); border:1px solid var(--border);
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    .photo-panel img{
+      display:block; width:100%; height:100%; object-fit:cover;
+    }
+    /* gold ribbons */
+    .photo-panel::before, .photo-panel::after{
+      content:""; position:absolute; width:0; height:0; pointer-events:none; border-style:solid; opacity:.95;
+    }
+    .photo-panel::before{ top:-2px; left:-2px; border-width:26px 0 0 52px; border-color:transparent transparent transparent var(--brand); }
+    .photo-panel::after{ right:-2px; bottom:-2px; border-width:0 0 36px 72px; border-color:transparent transparent var(--brand) transparent; }
+
+    .hero-content{
+      background:linear-gradient(180deg,var(--panel),var(--panel-2));
+      border:1px solid var(--border); border-radius:18px; padding:26px 24px;
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    .hero-content .eyebrow{ color:var(--brand); letter-spacing:.04em; margin:0 0 4px; font-weight:700 }
+    .hero-content h1{ margin:.2rem 0 .6rem; line-height:1.15; font-size:2.2rem }
+    .hero-content .highlight{ color:#fff }
+    .hero-content .role{ color:#eaeff8; text-transform:uppercase; font-weight:800; letter-spacing:.02em }
+    .hero-content .lead{ color:var(--muted); max-width:60ch }
+    .hero-content .actions{ display:flex; gap:12px; flex-wrap:wrap; margin-top:14px }
+
+    
+    .feature-row{
+      display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:18px;
+    }
+
+    
+    @media (max-width:980px){
+      .hero-split{ grid-template-columns:1fr }
+      .grid.cols-3, .feature-row{ grid-template-columns:1fr }
+    }
+
+    footer{margin-top:32px; padding:18px 0; border-top:1px solid var(--border); color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">Malachi Sevacko</div>
+      <nav aria-label="Primary">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="resume.html">Resume</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+        <a href="hobbies.html">Hobbies</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+    </header>
+
+    <main>
+      
+      <section class="hero-split">
+        <!-- Left: photo panel -->
+        <div class="photo-panel">
+          <img src="assets/1000002365.jpg" alt="Portrait of Your Name" />
+        </div>
+
+        <!-- Right: text/content -->
+        <div class="hero-content">
+          <p class="eyebrow">— Hello, I’m</p>
+          <h1><span class="highlight">Malachi Sevacko</span></h1>
+          <p class="lead">
+            Hi, I’m Malachi — a Computer Science student and former Navy technician who loves solving problems, learning languages,
+             and building things. Outside of class, I’m usually gaming, fishing, or working on electronics with my dog keeping me company.
+          </p>
+
+          <div class="actions">
+            <a class="btn primary" href="about.html">More About Me</a>
+            <a class="btn" href="projects.html">See Projects</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Feature cards -->
+      <section class="feature-row">
+        <article class="card">
+          <h3 style="margin-top:0">Resume</h3>
+          <p class="muted">Education, experience, skills.</p>
+          <a href="resume.html">Open →</a>
+        </article>
+        <article class="card">
+          <h3 style="margin-top:0">Blog</h3>
+          <p class="muted">Notes and Papers.</p>
+          <a href="blog.html">Read →</a>
+        </article>
+        <article class="card">
+          <h3 style="margin-top:0">Contact</h3>
+          <p class="muted">Let’s work together.</p>
+          <a href="contact.html">Reach out →</a>
+        </article>
+      </section>
+    </main>
+
+    <footer>© 2025 Malachi Sevacko • Built with GitHub Pages</footer>
+  </div>
+
+  <!-- auto-highlight current nav link  -->
+  <script>
+    (function () {
+      const here = location.pathname.split('/').pop() || 'index.html';
+      document.querySelectorAll('nav a').forEach(a => {
+        const target = a.getAttribute('href');
+        if ((here === '' && target === 'index.html') || here === target) {
+          a.setAttribute('aria-current', 'page');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
 
     /* Buttons */
     .btn{
