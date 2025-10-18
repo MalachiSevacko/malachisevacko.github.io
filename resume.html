@@ -3,17 +3,81 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>About • Your Name</title>
-  <link rel="stylesheet" href="assets/styles.css" />
+  <title>Resume • Malachi Sevacko</title>
+
+
+  <style>
+    :root{
+      --bg:#0f1216; --panel:#131923; --panel-2:#0f141a;
+      --text:#e7ecf3; --muted:#a7b0bd; --border:#253041;
+      --accent:#6aa5ff; --accent-700:#3c7de6;
+      --brand:#f5b301; --brand-700:#d79a00;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);
+      font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:var(--accent);text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+
+  
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;
+      padding:12px 0;border-bottom:1px solid var(--border)}
+    .brand{font-weight:800;letter-spacing:.2px}
+    nav{display:flex;gap:18px;flex-wrap:wrap}
+    nav a{color:var(--muted)}
+    nav a:hover, nav a[aria-current="page"]{color:var(--text)}
+
+    main{margin:26px 0}
+
+    .section-title{display:flex;align-items:center;gap:12px;margin:8px 0 12px}
+    .section-title h2{margin:0}
+    .bar{width:120px;height:3px;background:var(--brand);border-radius:3px}
+    .grid{display:grid;gap:16px}
+    .cols-2{grid-template-columns:1fr 1fr}
+    @media (max-width:980px){ .cols-2{grid-template-columns:1fr} }
+
+    .card{
+      background:linear-gradient(180deg,var(--panel),var(--panel-2));
+      border:1px solid var(--border);
+      border-radius:16px; padding:18px;
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    .card h3{margin:.2rem 0 .3rem}
+    .muted{color:var(--muted)}
+
+    .header-card{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap
+    }
+    .pill{
+      display:inline-block;border:1px solid var(--border);border-radius:999px;
+      padding:6px 10px;font-size:.85rem;color:var(--muted);background:#0c121a
+    }
+    .btn{
+      display:inline-block;padding:10px 14px;border-radius:12px;border:1px solid var(--border);
+      background:#0c121a;color:var(--text);font-weight:600
+    }
+    .btn.primary{background:var(--brand);color:#0b0900;border-color:transparent}
+    .btn.primary:hover{background:var(--brand-700)}
+
+    .meta{font-size:.95rem;color:var(--muted)}
+    ul.tight{margin:.3rem 0 0;padding-left:18px}
+    ul.tight li{margin:.25rem 0}
+
+  
+    .list-2col{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    @media (max-width:640px){ .list-2col{grid-template-columns:1fr} }
+
+    footer{margin-top:28px;padding:18px 0;border-top:1px solid var(--border);color:var(--muted)}
+  </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <div class="brand">Your Name</div>
+      <div class="brand">Malachi Sevacko</div>
       <nav aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="about.html">About Me</a>
-        <a href="resume.html">Resume</a>
+        <a href="resume.html" aria-current="page">Resume</a>
         <a href="projects.html">Projects</a>
         <a href="contact.html">Contact</a>
         <a href="hobbies.html">Hobbies</a>
@@ -22,15 +86,168 @@
     </header>
 
     <main>
-      <section class="card">
-        <h1>About Me</h1>
-        <p>Coming soon.</p>
+      <section class="card header-card">
+        <div>
+          <h1 style="margin:.2rem 0 .2rem">Resume</h1>
+          <div class="meta">New Waterford, OH • msevack1@kent.edu </div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn" href="assets/Resume.pdf" target="_blank" rel="noopener">Open PDF</a>
+          <button class="btn primary" onclick="window.print()">Print</button>
+        </div>
+      </section>
+
+    
+      <section>
+        <div class="section-title"><h2>Summary</h2><span class="bar"></span></div>
+        <article class="card">
+          <p class="muted" style="margin:0">
+            Expert electronics maintenance technician with 4.5 years in nuclear reactor plant operations (critical and shutdown).
+            Skilled in installing, maintaining, calibrating, configuring, and troubleshooting reactor control &
+            instrumentation equipment; experienced with GPTE and auxiliary equipment; test, calibrate, maintain, and repair
+            electronic and hydraulic-electric systems that support reactor operations.
+          </p>
+        </article>
+      </section>
+
+    
+      <section style="margin-top:18px">
+        <div class="section-title"><h2>Experience</h2><span class="bar"></span></div>
+
+        <article class="card">
+          <h3>United States Navy — Nuclear Electronics Technician</h3>
+          <div class="meta">Sep 2016 – Sep 2022 • 6 years</div>
+          <div class="grid cols-2" style="margin-top:10px">
+            <div>
+              <h4 style="margin:.2rem 0">Shutdown Reactor Operator</h4>
+              <div class="meta">Mar 2020 – Sep 2022 • 2.5 years</div>
+              <ul class="tight">
+                <li>Operated nuclear reactor during shutdown to maintain pressure/temperature within requirements.</li>
+                <li>Oversaw maintenance and operations in reactor & steam plant for planned work and special test procedures.</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style="margin:.2rem 0">Propulsion Plant Operator (Reactor Operator)</h4>
+              <div class="meta">Sep 2019 – Sep 2022 • 4 years</div>
+              <ul class="tight">
+                <li>Operated nuclear reactor in power range to maintain pressure, temperature, flow, and power.</li>
+                <li>Performed numerous startups and shutdowns with strict procedural compliance.</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style="margin:.2rem 0">Shutdown Electrical Operator (Load Dispatcher)</h4>
+              <div class="meta">Feb 2019 – Sep 2022 • 3 years</div>
+              <ul class="tight">
+                <li>Controlled and monitored electrical power distribution equipment feeding plant instrumentation and controls.</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style="margin:.2rem 0">Reactor Electrician</h4>
+              <div class="meta">Feb 2019 – Sep 2022 • 4 years</div>
+              <ul class="tight">
+                <li>Conducted inspections and field operations to rapidly identify and address concerns.</li>
+                <li>Monitored equipment performance; identified malfunctions and escalated for immediate resolution.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </section>
+
+    
+      <section style="margin-top:18px">
+        <div class="section-title"><h2>Education</h2><span class="bar"></span></div>
+        <div class="grid cols-2">
+          <article class="card">
+            <h3>Nuclear Field A-School — Charleston, SC</h3>
+            <div class="meta">Dec 2016 – May 2017 • 6 months</div>
+            <p class="muted" style="margin:.4rem 0 0">
+              Technical math; electricity & electronics; solid-state devices; digital logic & systems; microprocessors;
+              instrumentation & control circuits; schematic interpretation and fault isolation with test equipment.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Nuclear Field Power School — Charleston, SC</h3>
+            <div class="meta">Jul 2017 – Dec 2017 • 6 months</div>
+            <p class="muted" style="margin:.4rem 0 0">
+              PWR nuclear principles; heat transfer & fluid systems; plant chemistry/materials; mech & electrical systems;
+              radiological control; integrated understanding of naval nuclear power plants.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Prototype — Charleston, SC</h3>
+            <div class="meta">Feb 2018 – Jul 2018 • 6 months</div>
+            <p class="muted" style="margin:.4rem 0 0">
+              Practical operation of naval nuclear power plant systems; industrial safety; radiation fundamentals and detection;
+              troubleshooting and corrective actions at the component level.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Electronics Technician Maintenance School (ETMS) — Pearl Harbor, HI</h3>
+            <div class="meta">Aug 2021 – Sep 2021 • 2 months</div>
+            <p class="muted" style="margin:.4rem 0 0">
+              Advanced maintenance training for electronics systems supporting reactor plant operation.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      
+      <section style="margin-top:18px">
+        <div class="section-title"><h2>Skills</h2><span class="bar"></span></div>
+        <div class="grid cols-2">
+          <article class="card">
+            <h3>Hard Skills</h3>
+            <div class="list-2col muted">
+              <div>
+                <div class="pill">Equipment Operator Training</div>
+                <div class="pill">Precision Instruments</div>
+                <div class="pill">Meter Calibration</div>
+                <div class="pill">Codes & Standards Compliance</div>
+              </div>
+              <div>
+                <div class="pill">Records & Maintenance</div>
+                <div class="pill">Electronics Maintenance</div>
+                <div class="pill">Advanced Troubleshooting</div>
+                <div class="pill">Scheduled Maintenance</div>
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Soft Skills</h3>
+            <div class="list-2col muted">
+              <div>
+                <div class="pill">Fast-paced Learning</div>
+                <div class="pill">Open-mindedness</div>
+                <div class="pill">Integrity</div>
+                <div class="pill">Responsibility</div>
+              </div>
+              <div>
+                <div class="pill">Discipline</div>
+                <div class="pill">Mentoring</div>
+                <div class="pill">Stress Management</div>
+                <div class="pill">Critical Observation</div>
+              </div>
+            </div>
+          </article>
+        </div>
       </section>
     </main>
 
-    <footer>© 2025 Your Name</footer>
+    <footer>© 2025 Malachi Sevacko • Built with GitHub Pages</footer>
   </div>
-  <script src="assets/main.js"></script>
+
+  <script>
+    // Auto-highlight current nav link
+    (function () {
+      const here = location.pathname.split('/').pop() || 'resume.html';
+      document.querySelectorAll('nav a').forEach(a => {
+        const target = a.getAttribute('href');
+        if (here === target) a.setAttribute('aria-current','page');
+      });
+    })();
+  </script>
 </body>
 </html>
-
