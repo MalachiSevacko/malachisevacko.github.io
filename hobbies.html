@@ -3,34 +3,154 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>About • Your Name</title>
-  <link rel="stylesheet" href="assets/styles.css" />
+  <title>Hobbies • Malachi Sevacko</title>
+
+  <style>
+    :root{
+      --bg:#0f1216; --panel:#131923; --panel-2:#0f141a;
+      --text:#e7ecf3; --muted:#a7b0bd; --border:#253041;
+      --accent:#6aa5ff; --accent-700:#3c7de6;
+      --brand:#f5b301; --brand-700:#d79a00;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);
+      font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:var(--accent);text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+
+    
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;
+      padding:12px 0;border-bottom:1px solid var(--border)}
+    .brand{font-weight:800;letter-spacing:.2px}
+    nav{display:flex;gap:18px;flex-wrap:wrap}
+    nav a{color:var(--muted)}
+    nav a:hover, nav a[aria-current="page"]{color:var(--text)}
+
+    main{margin:26px 0}
+
+    .headline{display:flex;align-items:center;gap:12px;margin:0 0 14px}
+    .headline h1{margin:0}
+    .bar{width:120px;height:3px;background:var(--brand);border-radius:3px}
+    .muted{color:var(--muted)}
+
+   
+    .grid{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
+    @media (max-width:980px){ .grid{grid-template-columns:1fr} }
+
+    .card{
+      background:linear-gradient(180deg,var(--panel),var(--panel-2));
+      border:1px solid var(--border); border-radius:16px; overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,.25); display:flex; flex-direction:column;
+    }
+    .thumb{
+      position:relative; background:#0b0f14; height:200px; overflow:hidden; border-bottom:1px solid var(--border);
+    }
+    .thumb img{
+      width:100%; height:100%; object-fit:cover; display:block;
+      filter:saturate(1.05) contrast(1.02);
+    }
+    .content{padding:16px}
+    .content h3{margin:.2rem 0 .4rem}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .btn{
+      display:inline-block;padding:10px 14px;border-radius:12px;border:1px solid var(--border);
+      background:#0c121a;color:var(--text);font-weight:600
+    }
+    .btn.primary{background:var(--brand);color:#0b0900;border-color:transparent}
+    .btn.primary:hover{background:var(--brand-700)}
+
+    footer{margin-top:28px;padding:18px 0;border-top:1px solid var(--border);color:var(--muted)}
+  </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <div class="brand">Your Name</div>
+      <div class="brand">Malachi Sevacko</div>
       <nav aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="about.html">About Me</a>
         <a href="resume.html">Resume</a>
         <a href="projects.html">Projects</a>
         <a href="contact.html">Contact</a>
-        <a href="hobbies.html">Hobbies</a>
+        <a href="hobbies.html" aria-current="page">Hobbies</a>
         <a href="blog.html">Blog</a>
       </nav>
     </header>
 
     <main>
-      <section class="card">
-        <h1>About Me</h1>
-        <p>Coming soon.</p>
+      <div class="headline">
+        <h1>Hobbies</h1>
+        <span class="bar"></span>
+      </div>
+      <p class="muted" style="margin:0 0 16px">
+        A few things I enjoy outside of classes and projects.
+      </p>
+
+      <section class="grid">
+        <!-- Video Games -->
+        <article class="card">
+          <div class="thumb">
+            
+            <img src="assets/controller.jpg">
+          </div>
+          <div class="content">
+            <h3>Video Games</h3>
+            <p class="muted">
+              I like FPS and survival titles for fun.
+              Great for relaxing and learning design patterns.
+            </p>
+            <div class="actions">
+              <a class="btn" href="projects.html">See game-related projects</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Fishing -->
+        <article class="card">
+          <div class="thumb">
+            <img src="assets/fishing.jpeg">
+          </div>
+          <div class="content">
+            <h3>Fishing</h3>
+            <p class="muted">
+              Weekend trips when the weather’s good. I enjoy the quiet problem-solving—reading water, bait choice, and timing.
+            </p>
+            <div class="actions">
+              <a class="btn" href="about.html">More about me</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Electronics -->
+        <article class="card">
+          <div class="thumb">
+            <img src="assets/20191013_093234.jpg">
+          </div>
+          <div class="content">
+            <h3>Electronics</h3>
+            <p class="muted">
+              From troubleshooting to small builds. I enjoy understanding systems end-to-end and keeping notes on fixes.
+            </p>
+            <div class="actions">
+              <a class="btn primary" href="assets/Resume.pdf" target="_blank" rel="noopener">See resume (PDF)</a>
+            </div>
+          </div>
+        </article>
       </section>
     </main>
 
-    <footer>© 2025 Your Name</footer>
+    <footer>© 2025 Malachi Sevacko • Built with GitHub Pages</footer>
   </div>
-  <script src="assets/main.js"></script>
+
+  <script>
+    // Auto-highlight current nav link
+    (function () {
+      const here = location.pathname.split('/').pop() || 'hobbies.html';
+      document.querySelectorAll('nav a').forEach(a => {
+        const target = a.getAttribute('href');
+        if (here === target) a.setAttribute('aria-current','page');
+      });
+    })();
+  </script>
 </body>
 </html>
-
