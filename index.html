@@ -21,69 +21,50 @@
       </nav>
     </header>
 
-    <main>
-      <!-- Hero -->
-      <section class="hero">
-        <div>
-          <h1 style="margin:0 0 6px">Hi, I’m Your Name 👋</h1>
-          <p class="lead">
-            Computer Science student focused on UI/UX, web apps, and playful side projects.
-            This site collects my resume, projects, and notes.
-          </p>
-          <div class="actions">
-            <a class="btn primary" href="projects.html">View Projects</a>
-            <a class="btn" href="resume.html">See Resume</a>
-          </div>
-        </div>
-        <div class="card">
-          <h2 style="margin-top:0">Quick Info</h2>
-          <ul class="muted" style="margin:8px 0 0; padding-left:18px">
-            <li>Based in Ohio • EST</li>
-            <li>Interests: HCI, p5.js, networking, Japanese</li>
-            <li>Email: you@example.com</li>
-            <li>GitHub: github.com/your-handle</li>
-          </ul>
-        </div>
-      </section>
+   <main>
+  <!-- HERO: split photo + content -->
+  <section class="hero-split">
+    <!-- Left: photo panel -->
+    <div class="photo-panel">
+      <img src="assets/portrait.jpg" alt="Portrait of Your Name" />
+    </div>
 
-      <!-- Featured Projects (placeholders) -->
-      <section style="margin-top:8px">
-        <h2>Featured Projects</h2>
-        <p class="muted" style="margin-top:4px">More on the <a href="projects.html">Projects</a> page.</p>
-        <div class="grid cols-3" style="margin-top:12px">
-          <article class="card">
-            <h3 style="margin-top:0">Red Ball (p5.js)</h3>
-            <p class="muted">Side-scroller with layered clouds and physics.</p>
-            <a href="projects.html">Details →</a>
-          </article>
-          <article class="card">
-            <h3 style="margin-top:0">HTA Toolkit</h3>
-            <p class="muted">Class notes + examples for Human Interface Computing.</p>
-            <a href="projects.html">Details →</a>
-          </article>
-          <article class="card">
-            <h3 style="margin-top:0">Network Notes</h3>
-            <p class="muted">Concise summaries of common exam topics.</p>
-            <a href="projects.html">Details →</a>
-          </article>
-        </div>
-      </section>
+    <!-- Right: text/content -->
+    <div class="hero-content">
+      <p class="eyebrow">— Hello, I’m</p>
+      <h1><span class="highlight">Your Name</span><br><span class="role">Web Designer / CS Student</span></h1>
+      <p class="lead">
+        I design and build clean, accessible interfaces. I’m focused on HCI, front-end
+        development, and creating user-friendly experiences that make a difference.
+      </p>
 
-      <!-- Latest Posts (placeholders) -->
-      <section style="margin-top:20px">
-        <h2>Latest Posts</h2>
-        <div class="grid">
-          <article class="card">
-            <h3 style="margin-top:0"><a href="blog.html">Usability heuristics vs. Shneiderman’s rules</a></h3>
-            <p class="muted">Where they overlap and how I use both on homework.</p>
-          </article>
-          <article class="card">
-            <h3 style="margin-top:0"><a href="blog.html">Design critique: Discord’s channel hierarchy</a></h3>
-            <p class="muted">Navigation, discoverability, and notification load.</p>
-          </article>
-        </div>
-      </section>
-    </main>
+      <div class="actions">
+        <a class="btn primary" href="about.html">More About Me</a>
+        <a class="btn" href="projects.html">See Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Optional: quick links/cards below hero (placeholders) -->
+  <section class="feature-row">
+    <article class="card">
+      <h3 style="margin-top:0">Resume</h3>
+      <p class="muted">Education, experience, skills.</p>
+      <a href="resume.html">Open →</a>
+    </article>
+    <article class="card">
+      <h3 style="margin-top:0">Blog</h3>
+      <p class="muted">Notes on HCI and dev.</p>
+      <a href="blog.html">Read →</a>
+    </article>
+    <article class="card">
+      <h3 style="margin-top:0">Contact</h3>
+      <p class="muted">Let’s work together.</p>
+      <a href="contact.html">Reach out →</a>
+    </article>
+  </section>
+</main>
+
 
     <footer>© 2025 Your Name • Built with GitHub Pages</footer>
   </div>
